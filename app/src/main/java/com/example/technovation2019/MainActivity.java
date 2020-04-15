@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "";
@@ -29,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ContactUsActivity.class);
         startActivity(intent);
     }
-}
+    }
+
 

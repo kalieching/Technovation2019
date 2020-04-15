@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         text_speech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
+                if (status != TextToSpeech.ERROR) {
                     int result = text_speech.setLanguage(Locale.US);
 
                     if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -73,17 +73,27 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    /** Called when the user taps the CONTACT US button */
+    /**
+     * Called when the user taps the CONTACT US button
+     */
     public void switchToMedWastePage(View view) {
         Intent intent = new Intent(this, MedWasteActivity.class);
         startActivity(intent);
     }
 
-    public void onPause(){
-        if(text_speech != null){
+    public void onPause() {
+        if (text_speech != null) {
             text_speech.stop();
             text_speech.shutdown();
         }
         super.onPause();
+    }
+
+    /**
+     * Called when the user taps the CALENDAR button
+     */
+    public void switchToCalendarPage(View view) {
+        Intent intent = new Intent(this, CalendarActivity.class);
+        startActivity(intent);
     }
 }
